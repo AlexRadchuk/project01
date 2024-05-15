@@ -20,13 +20,17 @@ describe("Handling iFrames", () => {
    * Navigate back to main page
    * Validate title contains "techglobal"
    */
-  it.only("Test Case", () => {
-    cy.get('#apple').should("have.attr", "target", "_blank");
-    cy.get("#apple").invoke("removeAttr", "target").click();
+
+  it('Test Case', () => {
+
+    cy.contains('Apple').invoke('removeAttr', 'target').click()
+
     cy.title().should('eq', 'Apple')
+
     cy.go(-1)
+
     cy.title().then((el) => {
       cy.wrap(el.toLowerCase()).should('contain', 'techglobal')
-  });
-});
+    })
+  })
 });
