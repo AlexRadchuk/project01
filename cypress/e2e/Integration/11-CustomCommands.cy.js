@@ -1,9 +1,7 @@
-
 /// <reference types="cypress" />
 
 describe("Custom Commands", () => {
   beforeEach(() => {
-    cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
     cy.clickCard("Html Elements");
   });
 
@@ -18,9 +16,9 @@ describe("Custom Commands", () => {
     // cy.window()
     // cy.on()
 
-     cy.selectDropdownOption('#company_dropdown1', 'Apple')
+    cy.selectDropdownOption('#company_dropdown1', 'Apple')
 
-     cy.login('randomEmail@gmai.com', 'TechGlobal')
+    cy.login('randomEmail@gmai.com', 'TechGlobal')
   });
 
   it('Child Command', () => {
@@ -49,6 +47,11 @@ describe("Custom Commands", () => {
     // expect(true).equal(false)
 
 
+  })
+
+
+  it.only('qwe', () => {
+    cy.visit('http://127.0.0.1:5500/myRandom.html')
   })
 
 });

@@ -1,6 +1,7 @@
+/// <reference types="cypress" />
+
 describe("Handling Alerts", () => {
   beforeEach(() => {
-    cy.visit("https://www.techglobal-training.com/frontend/");
     cy.clickCard("Alerts");
   });
 
@@ -68,5 +69,6 @@ describe("Handling Alerts", () => {
     });
 
     cy.get("#prompt_alert").click();
+
   });
 });

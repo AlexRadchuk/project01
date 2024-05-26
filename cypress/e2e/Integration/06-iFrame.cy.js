@@ -1,6 +1,5 @@
 describe("Handling iFrames", () => {
   beforeEach(() => {
-    cy.visit("https://www.techglobal-training.com/frontend/");
     cy.contains(".cards", "IFrames").click();
   });
 
@@ -34,15 +33,15 @@ describe("Handling iFrames", () => {
     const arr = ["John", "Doe"];
 
     cy.get("#form_frame")
-    .its("0.contentDocument.body")
-    .find("#first_name, #last_name")
-    .each(($el, index) => {
-      cy.wrap($el).type(arr[index]);
-    });
+      .its("0.contentDocument.body")
+      .find("#first_name, #last_name")
+      .each(($el, index) => {
+        cy.wrap($el).type(arr[index]);
+      });
 
     cy.get("#form_frame")
-    .its("0.contentDocument.body")
-    .find('#submit').click()
+      .its("0.contentDocument.body")
+      .find('#submit').click()
 
     cy.get('#result').should('have.text', `You entered: ${arr.join(' ')}`)
   })
